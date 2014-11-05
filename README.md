@@ -13,3 +13,5 @@ test 3 - 10/22 - 9:05pm
 test 4 -10/23 - 4:52
 
 Pull request #7 - sent to Prof Stackpole. - AG 10/26 
+
+Pull Request #8 - sent to Prof. Stackpole - MXC 11/2
