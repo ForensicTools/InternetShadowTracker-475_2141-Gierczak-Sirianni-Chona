@@ -11,14 +11,17 @@ This tool pulls browsing history data and visualizes it into : graphs showing ho
 * bottle
 
 ##Installation
-###Tested on Windows 7
+###Tested on Windows 7; Python 3.4.2; 
 
 1. Install MongoDB
 * http://www.mongodb.org/
 
 2. Install Python
+* https://www.python.org/
 ```bash
-# Python\Scripts\
+# cd Drive:\...\Python\Scripts\
 pip install pymongo
 pip install bottle
 ```
+
+3. 
