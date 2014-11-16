@@ -18,10 +18,30 @@ This tool pulls browsing history data and visualizes it into : graphs showing ho
 
 2. Install Python
 * https://www.python.org/
+
+3. Install Python Modules
 ```bash
-# cd Drive:\...\Python\Scripts\
+# cd "Drive:\...\Python\Scripts\"
 pip install pymongo
 pip install bottle
 ```
 
-3. 
+4. Download GitHub Project
+* https://github.com/ForensicTools/InternetShadowTracker-475_2141-Gierczak-Sirianni-Chona
+
+##Run Web Server
+1. Start MongoDB Server
+```bash
+# Create directory for database storage
+# cd "Drive:\...\MongoDB\bin\"
+mongod.exe --dbpath <dir>
+```
+
+2. Start Python Rest Interface
+```bash
+# cd "Drive:\...\InternetShadowTracker\Web Interface\"
+py main.py
+```
+
+3. Open web browser
+* localhost:8080
