@@ -27,10 +27,11 @@ iframe {
 
 .canvas{
 	width: 100%;
-	height: 100%;
+	height: 1000px;
+	overflow: auto;
 	background-color: #EBEAD1;
 	border: 2px solid #808080;
-	clear:both;
+	clear: both;
 }
 
 .banner {
