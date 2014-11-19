@@ -1,4 +1,4 @@
-Download BrowserHistoryViewer.zip from below link.
+Download BrowsingHistoryView.zip from below link.
 
 Reference: http://www.nirsoft.net/utils/browsing_history_view.html
 
