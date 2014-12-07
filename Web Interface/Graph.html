@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link href="assets/css/StyleSheet.css" rel="stylesheet" type="text/css"  />
+	</head>
+
+	<body>
+		<div class="canvas">
+			<div class="navtab">
+				<h2>Graph</h2>
+			</div>
+			<br>
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuV9FODfCxxAOp0txlVES5ASnT-N2mXaY"></script>
+			<script>
+				function initMap() {
+					var mapOptions = {
+						center: new google.maps.LatLng(0, 0),
+						zoom: 8
+					};
+					var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				}
+			</script>
+			<div id="map-canvas"></div>
+		</div> <!-- canvas -->
+	</body>
+</html>

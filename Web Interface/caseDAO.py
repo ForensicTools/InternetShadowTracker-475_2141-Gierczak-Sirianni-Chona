@@ -6,9 +6,25 @@ class CaseDAO(object):
 		self.db = database
 		self.mycases = database.mycases
 		
-	def find_cases(self):
-		l = []
-		for each_case in self.mycases.find():
-			l.append({'_id':each_case['_id'], 'os':each_case['os'], 'date':each_case['date'], 'time':each_case['time'], 'tags':each_case['tags']})
-			
-		return l
+	def find_cases(self, tag):
+		list = []
+		if (tag == ""):
+			for case in self.mycases.find():
+				list.append({'_id':case['_id'], 'os':case['os'], 'date':case['date'], 'time':case['time'], 'tags':case['tags']})
+		else:
+			for case in self.mycases.find({"tags" : tag}):
+				list.append({'_id':case['_id'], 'os':case['os'], 'date':case['date'], 'time':case['time'], 'tags':case['tags']})
+				
+		return list
+		
+	def find_items(self, id):
+		list = []
+		#for id in case_id:
+		for item in self.db[id].find().distinct("Web Browser"):
+			list.append({'case_id':id, 'web_browser':item, 'item_count':self.db[id].find(item["Web Browser":item]).count() })
+		return list
+	
+	def graph_items(self, case_id):
+		data = "blah"
+		
+		return data
