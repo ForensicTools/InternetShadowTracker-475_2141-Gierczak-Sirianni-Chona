@@ -11,6 +11,7 @@
 				<h2>Select scan(s)</h2>
 			</div>
 			
+			<!-- Allow users to search scans -->
 			<div class="header">
 				<form name="search">
 					<input type="text" name="tag" placeholder="Search Tags . . ."
@@ -22,6 +23,7 @@
 				</form>
 			</div>
 			
+			<!-- Selecting and Viewing Cases -->
 			<form action="/Case.html">
 				<div class="header">
 				Select:
@@ -30,9 +32,11 @@
 					<input type="submit" value="View Case(s)" />
 				</div>
 				
+				<!-- List of all scans in the database -->
 				%for case in mycases:
 					<label class="scan" for="{{case['_id']}}">
-						<input id="{{case['_id']}}" type="checkbox" name="cases" value="{{case['_id']}}" onchange="toggleBGColor(this);">
+						<!-- Invisible checkbox to submit query data -->
+						<input id="{{case['_id']}}" type="checkbox" name="cases" value="{{case['_id']}}" style="display:none" onchange="toggleBGColor(this);">
 						<table>
 							<tr>
 								<th colspan="3">
@@ -41,7 +45,7 @@
 							</tr>
 							<tr>
 								<td rowspan="4" vertical-align="center">
-									<img src="/assets/images/storelogo.png">
+									<img src="/assets/images/storelogo.png" height="64" width="64">
 								</td>
 								<td>OS:</td>
 								<td>{{case['os']}}</td>

@@ -1,8 +1,10 @@
+//Make query string for tag information
 function searchTag(form) {
 	var tag = form.tag.value;
 	window.location.href = "/CaseList?tag=" + encodeURIComponent(tag);
 }
 
+//Checks all check boxes
 function checkAll() {
 	var myCheckBoxes = document.getElementsByTagName('input');
 
@@ -13,6 +15,7 @@ function checkAll() {
 		}
 }
 
+//Unchecks all check boxes
 function checkNone() {
 	var myCheckBoxes = document.getElementsByTagName('input');
 
@@ -23,6 +26,8 @@ function checkNone() {
 		}
 }
 
+//Creates query based divs of class scans that have orange background
+//Not used at the moment
 function viewSelected() {
 	var myScans = document.querySelectorAll("label.scan");
 	var selectedScans = [];
@@ -52,6 +57,7 @@ function viewSelected() {
 	
 }
 
+//Change element background to orange
 function toggleBGColor(caseID) {
 	if (caseID.parentNode.style.backgroundColor === "") 
 		caseID.parentNode.style.backgroundColor = "#EEEEEE";
@@ -62,6 +68,7 @@ function toggleBGColor(caseID) {
 		caseID.parentNode.style.backgroundColor = "#EEEEEE";    
 }
 
+//Convert hex string to RGB format
 function hexToRgb(hex) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	result = {

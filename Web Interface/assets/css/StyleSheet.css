@@ -48,7 +48,7 @@ body { /* body */
 table {
 	width: 100%;
 	height: 100%;
-	padding: 4px;
+	padding: 0px;
 	margin: 0px;
 	border: 0px;
 }
@@ -92,11 +92,11 @@ form { display: inline; }
 	float: left;
 	
 	width: calc(42% - 7px);
-	height: 120px;
-	
+	height: 150px;
 	border: 2px solid #808080;
 	border-bottom: 5px solid #808080;
 	border-right: 5px solid #808080;
+	padding: 0px;
 	
 	display: inline;
 	text-align: center;
@@ -167,4 +167,10 @@ form { display: inline; }
 	-moz-box-shadow: 0 0 30px 5px #999;
 	-webkit-box-shadow: 0 0 30px 5px #999;
 	box-shadow: 0 0 30px 5px #999;
+}
+
+#map-canvas {
+	width: 70%;
+	height: 70%;
+	background: #999
 }

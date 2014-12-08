@@ -11,6 +11,7 @@
 				<h2>Select Data</h2>
 			</div>
 			
+			<!-- Allow users to search browser types -->
 			<div class="header">
 				<form name="search">
 					<input type="text" name="tag" placeholder="Search Web Browsers . . ."
@@ -22,7 +23,8 @@
 				</form>
 			</div>
 			
-			<form action="/Case.html">
+			<!-- Selecting and graphing the data -->
+			<form action="/Graph.html">
 				<div class="header">
 				Select:
 					<button type="button" onclick="checkAll();">All</button>
@@ -30,9 +32,11 @@
 					<input type="submit" value="View Case(s)" />
 				</div>
 				
+				<!-- List of all browser data from cases selected -->
 				%for item in myitems:
-					<label class="scan" for="{{item['case_id']}},{{item['web_browser']}}">
-						<input id="{{item['case_id']}},{{item['web_browser']}}" name="{{item['case_id']}}" type="checkbox" value="{{item['web_browser']}}" onchange="toggleBGColor(this);">
+					<label class="scan" for="{{item['case_id']}}:{{item['web_browser']}}">
+						<!-- Invisible checkbox for submitting query data -->
+						<input id="{{item['case_id']}}:{{item['web_browser']}}" name="pair" type="checkbox" style="display:none" value="{{item['case_id']}}&#58;{{item['web_browser']}}" onchange="toggleBGColor(this);">
 						<table>
 							<tr>
 								<th colspan="3">
@@ -41,7 +45,7 @@
 							</tr>
 							<tr>
 								<td rowspan="2" vertical-align="center">
-									<img src="/assets/images/{{item_id['Web Browser']}}.png">
+									<img src="/assets/images/{{item['web_browser']}}.png" height="64" width="64">
 								</td>
 								<td>Case:</td>
 								<td>{{item['case_id']}}</td>

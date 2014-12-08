@@ -22,21 +22,23 @@ def index():
 #Web page: List of cases currently in the database
 @bottle.route('/CaseList.html')
 def case_list():
-	tag = bottle.request.query.tag
+	tag = bottle.request.query.tag #Converting the query into variables
 	mycase_list = case.find_cases(tag)
 	return bottle.template('CaseList.html', dict(mycases = mycase_list))
 
 #Web page: List of items within the selected case
 @bottle.route('/Case.html')
 def load_case():
-	case_id = bottle.request.query.cases
+	case_id = bottle.request.query.cases #Converting the query into variables
 	item_list = case.find_items(case_id)
 	return bottle.template('Case.html', dict(myitems = item_list))
 
 #Web page: Graphing the database
 @bottle.route('/Graph.html')
 def graph():
-	return bottle.template('Graph.html')
+	graph_list = bottle.request.query.pair #Converting the query into variables
+	graph_data = case.graph_items(graph_list)
+	return bottle.template('Graph.html', dict(mydata = graph_data))
 
 #Server Connection
 ServerAddr = "mongodb://localhost"
