@@ -45,3 +45,37 @@ This tool pulls browsing history data and visualizes it into : graphs showing ho
 
 3. Open web browser
 	>localhost:8080
+
+##Run Browsing History Extraction Scripts
+
+•Step1: Download"BrowsingHistoryScripts" folder
+
+•Step2: Go to the directory of this folder in command prompt
+
+•Step3: The first script that needs to be run is thechosen1.bat. This batch script can be run by typing in .\thechosen1.bat
+ 
+Alternatively you can double click the icon for the script and it should run.
+
+•Step4: Once the .\thechosen1.bat has been run you will notice that there will be 2 CSV files. "mycases.csv" is the data you entered and stores vital data about the PC you extracted. It helps for later use when building a profile for the case. The other CSV is named after the caseID you entered in the command prompt. That contains the actual browsing history itself formatted to a CSV.
+
+•Step5: The CSV must now be imported into a MongoDB database.
+        __.,,------.._
+     ,'"   _      _   "`.
+    /.__, ._  -=- _"`    Y
+   (.____.-.`      ""`   j
+    VvvvvvV`.Y,.    _.,-'       ,     ,     ,
+        Y    ||,   '"\         ,/    ,/    ./
+        |   ,'  ,     `-..,'_,'/___,'/   ,'/   ,
+   ..  ,;,,',-'"\,'  ,  .     '     ' ""' '--,/    .. ..
+ ,'. `.`---'     `, /  , Y -=-    ,'   ,   ,. .`-..||_|| ..
+ff\\`. `._        /f ,'j j , ,' ,   ,   ,  \=\     || ||`||_..
+l` \` `.`."`-..,-' j  /./ /, , / , / /  \   \=\    || `' || ||...
+ `  `   `-._ `-.,-/ ,' /`"/-/-/-/-"'''"`.`.  `'.\--`'--..`'_`' || ,
+            "`-_,',  ,'  f    ,   /      `._    ``._     ,  `-.`'//         ,
+          ,-"'' _.,-'    |_,-'_,,'          "`-._ . "`. /|     `.'\ ,       |
+        ,',.,-'"          \=) ,`-.         ,    `-'._`.V |       \ // .. . /|
+        |f\\               `._ )-."`.     /|         `.| |        `.`-||-\\/
+        l` \`                 "`._   "`--' j          j' j          `-`---'
+         `  `                     "`_,-','/       ,-'"  /
+                                 ,'",__,-'       /,, ,-'
+                                 Vvv'            VVv'
