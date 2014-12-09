@@ -1,31 +1,71 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link href="assets/css/CaseList.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/StyleSheet.css" rel="stylesheet" type="text/css"  />
+	<script src="assets/javascript/CaseList.js"></script>
 	</head>
 
 	<body>
 		<div class="canvas">
 			<div class="navtab">
-				<h2>Select a scan</h2>
+				<h2>Select scan(s)</h2>
 			</div>
 			
+			<!-- Allow users to search scans -->
 			<div class="header">
-					<input type="text" name="tags" placeholder="Search Tags..."
+				<form name="search">
+					<input type="text" name="tag" placeholder="Search Tags . . ."
 						size="80"></input>
+					<button onclick="searchTag(this.form);">Search</button>
+					<form action="/CaseList.html">
+						<input type="submit" value="Clear">
+					</form>
+				</form>
 			</div>
 			
-			%for case in mycases:
-			<a href="/loadcase?id={{case['_id']}}">
-					<div class="scan">
-						<img src="assets/images/storelogo.png">	<br>
-						<h3>{{case['os']}}</h3>	<br><br>
-							Date: {{case['date']}}	<br>
-							Time: {{case['time']}}	<br>
-							Tags: {{case['tags']}}	<br>
-					</div>
-			</a>
-			%end			
+			<!-- Selecting and Viewing Cases -->
+			<form action="/Case.html">
+				<div class="header">
+				Select:
+					<button type="button" onclick="checkAll();">All</button>
+					<button type="button" onclick="checkNone();">None</button>
+					<input type="submit" value="View Case(s)" />
+				</div>
+				
+				<!-- List of all scans in the database -->
+				%for case in mycases:
+					<label class="scan" for="{{case['_id']}}">
+						<!-- Invisible checkbox to submit query data -->
+						<input id="{{case['_id']}}" type="checkbox" name="cases" value="{{case['_id']}}" style="display:none" onchange="toggleBGColor(this);">
+						<table>
+							<tr>
+								<th colspan="3">
+									{{case['_id']}}
+								</th>
+							</tr>
+							<tr>
+								<td rowspan="4" vertical-align="center">
+									<img src="/assets/images/storelogo.png" height="64" width="64">
+								</td>
+								<td>OS:</td>
+								<td>{{case['os']}}</td>
+							</tr>
+							<tr>
+								<td>Date:</td>
+								<td>{{case['date']}}</td>
+							</tr>
+							<tr>
+								<td>Time:</td>
+								<td>{{case['time']}}</td>
+							</tr>
+							<tr>
+								<td>Tags:</td>
+								<td>{{case['tags']}}</td>
+							</tr>
+						</table>
+					</label>
+				%end
+			</form>
 		</div> <!-- canvas -->
 	</body>
 </html>

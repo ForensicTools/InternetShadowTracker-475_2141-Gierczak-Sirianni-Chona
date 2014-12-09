@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link href="css/Case.css" rel="stylesheet" type="text/css"  />
+	<link href="assets/css/StyleSheet.css" rel="stylesheet" type="text/css"  />
+	<script src="assets/javascript/CaseList.js"></script>
 	</head>
 
 	<body>
-
+		<div class="canvas">
+			<div class="navtab">
+				<h2>Select Data</h2>
+			</div>
+			
+			<!-- Allow users to search browser types -->
+			<div class="header">
+				<form name="search">
+					<input type="text" name="tag" placeholder="Search Web Browsers . . ."
+						size="80"></input>
+					<button onclick="searchTag(this.form);">Search</button>
+					<form action="/CaseList.html">
+						<input type="submit" value="Clear">
+					</form>
+				</form>
+			</div>
+			
+			<!-- Selecting and graphing the data -->
+			<form action="/Graph.html">
+				<div class="header">
+				Select:
+					<button type="button" onclick="checkAll();">All</button>
+					<button type="button" onclick="checkNone();">None</button>
+					<input type="submit" value="View Case(s)" />
+				</div>
+				
+				<!-- List of all browser data from cases selected -->
+				%for item in myitems:
+					<label class="scan" for="{{item['case_id']}}:{{item['web_browser']}}">
+						<!-- Invisible checkbox for submitting query data -->
+						<input id="{{item['case_id']}}:{{item['web_browser']}}" name="pair" type="checkbox" style="display:none" value="{{item['case_id']}}&#58;{{item['web_browser']}}" onchange="toggleBGColor(this);">
+						<table>
+							<tr>
+								<th colspan="3">
+									{{item['web_browser']}}
+								</th>
+							</tr>
+							<tr>
+								<td rowspan="2" vertical-align="center">
+									<img src="/assets/images/{{item['web_browser']}}.png" height="64" width="64">
+								</td>
+								<td>Case:</td>
+								<td>{{item['case_id']}}</td>
+							</tr>
+							<tr>
+								<td>Count:</td>
+								<td>{{item['item_count']}}</td>
+							</tr>
+						</table>
+					</label>
+				%end
+			</form>
+		</div> <!-- canvas -->
 	</body>
 </html>

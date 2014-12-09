@@ -1,4 +1,4 @@
-a{
+a{ /* links */
 	text-decoration: none;
 	color: #505050;
 }
@@ -32,102 +32,106 @@ h4, form { /*text*/
 	color: rgb(80,80,80);
 }
 
-p{
+p{ /* Paragraph */
 	font-family: Arial;
 	font-size: 2em;
 	margin: 0 auto;
 }
 
-body {
-	margin: 0px;
-	background-color: rgb(159,196,231);
-	padding: 8%;
-	padding-top: 3%;
-}
-
-iframe {
+body { /* body */
+	padding: 0;
+	margin: 0;
 	width: 100%;
 	height: 100%;
 }
 
-.banner {
-	height: auto;
+table {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
 }
 
-.columnLeft {
-	float: left;
+th {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1.5em;
+	color: #EEEEEE;
+	background: #808080;
 }
 
-.columnRight {
-	float: right;
+td {
+	width: auto;
+	text-align: left;
+}
+
+form { display: inline; }
+
+.canvas{
+	width: 100%;
+	height: 100%;
 }
 
 .searchBox {
 	float: left;
 	width:auto;
-	
-}	
+}
 
 .header{
 	height: auto;
 	clear: both;
-	padding-bottom: 2%;
-	padding-top: 2%;
+	padding: 2%;
 	padding-left: 4%;
 	padding-right: 4%;
 	text-align: center; 
 	vertical-align: middle;
 }
 
-.canvas{
-	width: 100%;
-	height: 100%;
-	background-color: #EBEAD1;
-	border: 2px solid #808080;
-	clear:both;
-}
-
 .scan {
 	float: left;
 	
-	width: 20%;
-	height: auto;
-	padding-top: 30px;
-	padding-bottom:30px;
-	
-	background-color: #EBEAD1;
-	
+	width: calc(42% - 7px);
+	height: 150px;
 	border: 2px solid #808080;
 	border-bottom: 5px solid #808080;
 	border-right: 5px solid #808080;
+	padding: 0px;
 	
-	display: table-cell;
+	display: inline;
 	text-align: center;
 	
-	margin-bottom: calc(4% - 5px);
-	margin-left: calc(4% - 2px);
+	margin-bottom: 4%;
+	margin-left: 4%;
+	
+	overflow: hidden;
+	
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+	user-select: none;
 }
 
 .scan:hover {
-	background-color: #d4d3bc;
+	background-color: #CCCCCC;
 }
 
 .scan:active , .scan:focus {
-	background-color: #d4d3bc;
 	border: 2px solid #808080;
 	margin-top: 3px;
-	margin-left: calc(3px + 4%);
+	margin-left: calc(4% + 3px);
 }
 
 .navtab {
 	height: auto;
-	width: auto;
+	width: 100%;
 	float: left;
 	position: relative;
 	clear:both;
-	background-color: rgb(249,204,157);
+	text-align: center;
+	background-color: #FFC266;
 	border-bottom: 2px solid #808080;
-	border-right: 2px solid #808080;
 	padding: 3px;
 	padding-left: 8px;
 	padding-right: 8px;
@@ -163,4 +167,10 @@ iframe {
 	-moz-box-shadow: 0 0 30px 5px #999;
 	-webkit-box-shadow: 0 0 30px 5px #999;
 	box-shadow: 0 0 30px 5px #999;
+}
+
+#map-canvas {
+	width: 70%;
+	height: 70%;
+	background: #999
 }
