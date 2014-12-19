@@ -1,7 +1,7 @@
 import bottle
 import pymongo
 import caseDAO
-import caseImport
+from caseImport import *
 
 #Allow assets to be loaded (Images, css, etc.)
 from bottle import static_file
@@ -12,6 +12,7 @@ def server_static(filepath):
 #Web page: Index
 @bottle.route('/')
 def index_redir():
+	import_files()
 	return bottle.template('Index.html')
 
 #Redirect to Index
